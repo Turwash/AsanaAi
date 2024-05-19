@@ -69,3 +69,9 @@ mass index, empowering you to make informed decisions about your health and
 fitness journey. And suggests you the calorie intake as per your BMI
 
 
+## How to run : 
+Just Start the index.html : 
+username - Turwash
+Password : Turwash@123
+or you can direct start with home.html
+
