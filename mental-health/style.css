@@ -1,0 +1,484 @@
+@import url("reset.css");
+
+/* https://fonts.google.com/specimen/Roboto?category=Sans+Serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* https://stackoverflow.com/a/16120671 */
+/* https://www.pexels.com/photo/person-in-black-pants-and-black-shoes-sitting-on-brown-wooden-chair-4101143/ */
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header, footer {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: white;
+    color: #424652;
+    position: sticky;
+    top: 0;
+    /* https://shadows.brumm.af */
+    box-shadow:
+    0px 0.1px 0.7px rgba(0, 0, 0, 0.02),
+    0px 0.3px 1.7px rgba(0, 0, 0, 0.028),
+    0px 0.6px 3.3px rgba(0, 0, 0, 0.035),
+    0px 1.1px 5.8px rgba(0, 0, 0, 0.042),
+    0px 2.1px 10.9px rgba(0, 0, 0, 0.05),
+    0px 5px 26px rgba(0, 0, 0, 0.07);
+}
+
+footer {
+    background-color: #EFF2F4;
+    color:#73737A;
+    max-height: max-content;
+    overflow-y: hidden;
+    text-align: center;
+    bottom: 0;
+}
+
+header * {
+    display: inline-block;
+}
+
+#chart-h1, #resources-h1, #results-h1 {
+    text-align: center;
+}
+
+header h1 {
+    font-size: x-large;
+    vertical-align: middle;
+    margin: 10pt 20pt 10pt 20pt;
+}
+
+header nav {
+    font-size: larger;
+    vertical-align: middle;
+    float: right;
+}
+
+header nav {
+    margin: 15pt 20pt 5pt 20pt;
+}
+
+header nav a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: #424652;
+    margin: 0 10pt;
+    transition-property: color;
+    transition-duration: 0.1s;
+}
+
+header nav a:hover, main li:hover{
+    color: #5D76C2;
+    transition-property: color;
+    transition-duration: 0.1s;
+}
+
+footer p {
+    padding: 10pt 0pt;
+}
+
+footer section {
+    width: 600px;
+    margin: 20pt auto;
+    height: max-content;
+}
+
+main {
+    width: 960px;
+    padding: 20pt;
+    margin: auto;
+}
+
+main section {
+    background-color: none;
+    display: block;
+    border: 0px solid #E1E4E8;
+    padding: 15pt 20pt;
+    margin: 20pt 0pt;
+    box-shadow: /* https://shadows.brumm.af */
+    0px 0.1px 0.7px rgba(0, 0, 0, 0.008),
+    0px 0.3px 1.7px rgba(0, 0, 0, 0.012),
+    0px 0.6px 3.3px rgba(0, 0, 0, 0.015),
+    0px 1.1px 5.8px rgba(0, 0, 0, 0.018),
+    0px 2.1px 10.9px rgba(0, 0, 0, 0.022),
+    0px 5px 26px rgba(0, 0, 0, 0.03);
+    border-radius: 0pt;
+}
+
+main h1 {
+    color: #6B88D1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30pt;
+    margin: 10pt 0pt;
+}
+
+header h1::first-letter {
+    color: #6B88D1;
+    font-size: 21pt;
+}
+
+main h2 {
+    color: #73737A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20pt;
+    margin: 10pt 0pt;
+    text-align: center;
+}
+
+main h3 {
+    color: #73737A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    margin: 10pt 0pt;
+}
+
+main a, header a {
+    text-decoration: none;
+    color: #73737A;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: #5D76C2;
+}
+
+cite {
+    font-size: 12pt;
+    color: #8a8a94;
+    display: block;
+    width: 80%;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+main p {
+    color: #73737A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10pt 0pt;
+    text-indent: 0pt;
+}
+
+main p a, footer a {
+    color: #6B88D1;
+    text-decoration: none;
+}
+
+main ul {
+    color: #73737A;
+    font-size: 18pt;
+    display: block;
+    margin:0pt 40pt;
+}
+
+main img, main div {
+    color: #73737A;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 15pt;
+}
+
+main .button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #6B88D1;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+main .button:hover {
+    background-color: #5D76C2;
+}
+
+main .video-section {
+    text-align: center;
+    border-radius: 0;
+    border-width: 0;
+    background-color: #7FB6DB;
+}
+
+.video-section h2 {
+    color: white;
+}
+
+main .video-section video {
+    display: block;
+    margin: 15pt auto;
+    width: 700px;
+    height: 400px;
+}
+
+main .resource img {
+    max-width: 210px;
+    max-height: 150px;
+    display: block;
+    margin: auto;
+}
+
+main li {
+    list-style: circle;
+    font-size: 16pt;
+    font-family: 'Roboto', sans-serif;
+    padding: 5pt 0pt;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+main li:hover {
+    list-style: disc;
+}
+
+#question {
+    text-indent: 0pt;
+    font-size: 16pt;
+}
+
+#question, main ul {
+    animation: nextQuestion;
+    animation-duration: 0.25s;
+}
+
+@keyframes nextQuestion {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.chart-divs {
+    display: block;
+    height: 300px;
+    max-width: 80%;
+    margin: 0 auto 40pt auto;
+}
+
+#figure-container {
+    width: 960px;
+    display: block;
+    margin: auto;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote */
+figure {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20pt;
+    width: 265px;
+    font-size: 16pt;
+    color: #73737A;
+    height: max-content;
+    font-family: 'Roboto', sans-serif;
+}
+
+figure a {
+    text-align: left;
+    padding-left: 10pt;
+    color: #5D76C2;
+    display: block;
+}
+
+figure a:hover {
+    color: #7596F5;
+    transition-property: color;
+    text-decoration: underline;
+}
+
+figure blockquote {
+    padding: 15px;
+    text-align: left;
+    font-size: 15pt;
+    margin: 10pt 0pt;
+    background: #EEE;
+    border-radius: 5px;
+}
+
+figure blockquote::before {
+    content: '\201C';
+}
+
+figure blockquote::after {
+    content: '\201D';
+}
+
+figure figcaption {
+ font-size: 15pt;
+ font-weight: 500;
+ text-align: center;
+}
+
+#banner-image {
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.2)), url("assets/banner-image.jpg");
+    background-size: cover;
+    background-size: 100%;
+    background-position-y: 30%;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.resource {
+    display: inline-block;
+    width: 249px;
+    height: 350px;
+    vertical-align: top;
+    border-radius: 0;
+    margin: 7px 6px;
+    transform: scale(1);
+    transition-duration: 0.2s;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+}
+
+.resource:hover{
+    transform: scale(1.05);
+}
+
+.resource p {
+    text-align: center;
+    display: block;
+    text-indent: 0;
+    font-size: 19pt;
+}
+
+#quiz-box {
+    width: max-content;
+    margin: 50pt auto;
+    padding: 20pt 30pt;
+    border-radius: 0pt;
+    background-color: rgba(255,255,255,0.8);
+    border-width: 0px;
+    box-shadow: 0px 0px 0px;
+}
+
+#quiz-box-text {
+    text-align: left;
+}
+
+.long {
+    display: inline-block;
+    width: 436px;
+    vertical-align: top;
+    padding: 0pt 15pt;
+}
+
+#credit-p {
+    text-align: left;
+    text-indent: 0;
+    display: block;
+    width: 750px;
+    margin: auto;
+    margin-top: 90px;
+    font-size: 13pt;
+}
+
+main .home-cards {
+    display: inline-block;
+    width: 437px;
+    vertical-align: top;
+}
+
+#zombo {
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transition-property: opacity;
+}
+
+#zombo:hover {
+    opacity: 1;
+}
+
+/* Additional styling */
+
+/* Styling for home-cards */
+.home-cards {
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.home-cards h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.home-cards p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Styling for quiz questions */
+.quiz-question {
+    margin-bottom: 20px;
+}
+
+.quiz-question h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.quiz-options {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.quiz-options li {
+    margin-bottom: 10px;
+}
+
+/* Styling for buttons */
+.button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #6B88D1;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #072271;
+}
+
+/* Styling for responsive design */
+@media screen and (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+    
+    .home-cards,
+    .long {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .resource {
+        width: calc(50% - 12px);
+    }
+}

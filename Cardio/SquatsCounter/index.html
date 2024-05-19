@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Squat Counter</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div>
+      <p1>SQUAT COUNTER: </p1>
+      <p2 id="counter"> 0</p2>
+    </div>
+    <div>
+      <video></video>
+      <canvas></canvas>
+      <h1></h1>
+    </div>
+    <script src="./resolution.js"></script>
+    <script src="./pose.js"></script>
+  </body>
+</html>

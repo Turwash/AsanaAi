@@ -1,0 +1,53 @@
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  display: none;
+}
+
+canvas,
+h1 {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  height: 90%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+}
+
+h1::before {
+  content: var(--text-content);
+  animation: text-animate 1s linear infinite;
+}
+
+p1 {
+  font-size: 40px;
+  color: black;
+}
+
+p2 {
+  font-size: 59px;
+  color: blue;
+}
+
+@keyframes text-animate {
+  0% {
+    --text-content: "Loading.";
+  }
+  33% {
+    --text-content: "Loading..";
+  }
+  66% {
+    --text-content: "Loading...";
+  }
+  100% {
+    --text-content: "Loading";
+  }
+}

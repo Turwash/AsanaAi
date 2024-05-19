@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsanaAi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="brand">ASANA.AI</div>
+                <div class="nav-links">
+                    <a href="home.html">Home</a>
+                    <a href="aboutus.html">About</a>
+                    <a href="index.html">Login</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="video-container">
+                <video src="assets/benefit.mp4" autoplay muted loop></video>
+            </div>
+            <div class="image-section">
+                <div class="image-tab">
+                    <img src="assets/image1.jpg" alt="Image 1" id="imageLink">
+                    <button id="button1">Pose detector</button>
+                </div>
+                
+                <div class="image-tab">
+                    <a href="PoseCorrector/entry.html">
+                        <img src="assets/image2.jpg" alt="Image 5">
+                    </a>
+                    <a href="PoseCorrector/entry.html">
+                        <button id="button2">Pose corrector</button>
+                    </a>
+                </div>
+                
+                <div class="image-tab">
+                    <a href="Cardio/index.html">
+                        <img src="assets/image5.jpg" alt="Image 5">
+                    </a>
+                    <a href="Cardio/index.html">
+                        <button id="button5">Cardio</button>
+                    </a>
+                    
+                </div>
+
+                <div class="image-tab">
+                    <a href="Meditation-Motion-Detection/index.html">
+                        <img src="assets/medi.png" alt="Image 4">
+                    </a>
+                    <a href="Meditation-Motion-Detection/index.html">
+                        <button id="button4">Meditation</button>
+                    </a>
+                </div>
+
+                <div class="image-tab">
+                    <a href="Physical-health/index.html">
+                        <img src="assets/image4.jpg" alt="Image 4">
+                    </a>
+                    <a href="Physical-health/index.html">
+                        <button id="button4">Physical-Health</button>
+                    </a>
+                </div>
+                
+                <div class="image-tab">
+                    <a href="mental-health/index.html">
+                        <img src="assets/image6.png" alt="Image 6">
+                    </a>
+                    <a href="mental-health/index.html">
+                        <button id="button6">Mental-Health</button>
+                    </a>
+                </div>                
+            </div>
+        </main>
+        
+    </div>
+    <script>
+        const button1 = document.getElementById('button1');
+    
+        button1.addEventListener('click', function() {
+            window.location.href = 'https://yogasmart.netlify.app/';
+        });
+    </script>
+</body>
+</html>

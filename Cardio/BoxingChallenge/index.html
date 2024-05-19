@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Boxing Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body onload="startGame()">
+    <div class="control-panel"></div>
+    <div>
+      
+      <p3>Punch the moving box to increase score</p3>
+      <p1>HIT COUNT: </p1>
+      <p1 id="counter"> 0</p1>
+      <!-- <p1>BOX</p1>
+      <p2 id="box_x"> 0</p2>
+      <p2 id="box_y"> 0</p2> -->
+      <!-- <p1>HAND LX: </p1>
+      <p1 id="hand_lx"> 0</p1>
+      <p1>HAND LY: </p1>
+      <p1 id="hand_ly"> 0</p1>
+      <p1>HAND RX: </p1>
+      <p1 id="hand_rx"> 0</p1>
+      <p1>HAND RY: </p1>
+      <p1 id="hand_ry"> 0</p1> -->
+      <!-- <p1>SPEED LEFT HAND</p1>
+      <p2 id="speed_l"> 0</p2>
+      <p1>SPEED RIGHT HAND</p1>
+      <p2 id="speed_r"> 0</p2> -->
+      <!-- <p1 id="message">Message</p1> -->
+      <!-- <p2>BOX POS A: </p2>
+      <p2 id="box_pos_a">0</p2>
+      <p2>BOX POS B: </p2>
+      <p2 id="box_pos_b">0</p2>
+      <p2>BOX POS C: </p2>
+      <p2 id="box_pos_c">0</p2>
+      <p2>BOX POS D: </p2>
+      <p2 id="box_pos_d">0</p2> -->
+      <!-- <p2>RIGHT HAND SPEED: </p2>
+      <p2 id="right_hand_speed">0</p2>
+      <p2>LEFT HAND SPEED: </p2>
+      <p2 id="left_hand_speed">0</p2> -->
+      <p3>HAND SPEED LEFT: </p3>
+      <p3 id="hand_speed_l">0</p3>
+      <p3>HAND SPEED RIGHT: </p3>
+      <p3 id="hand_speed_r">0</p3>
+    </div>
+    <div>
+      <video></video>
+      <!-- <img id="ball" src="./ball.png"/> -->
+      <canvas id="ball-canvas"></canvas>
+      <canvas id="landmarks"></canvas>
+      <h1></h1>
+    </div>
+    <script src="./resolution.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>

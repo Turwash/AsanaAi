@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardio Section</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #148607;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .navbar-text {
+        margin-right: 20px;
+      }
+
+      .container {
+        width: 80%;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 2px solid #4caf50;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      h1 {
+        color: #eee8e8;
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .module-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .module-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .module-image {
+        margin-bottom: 10px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .module-link {
+        display: block;
+        margin-top: 10px;
+        padding: 15px 30px;
+        text-decoration: none;
+        color: #333333;
+        background-color: #4caf50;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+        width: 200px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .module-link:hover {
+        background-color: #45a049;
+      }
+
+      .app-download {
+        margin-top: 30px;
+        font-size: 20px;
+        color: #333333;
+      }
+
+      .app-download a {
+        margin-top: 10px;
+        padding: 15px 30px;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #007bff;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .app-download a:hover {
+        background-color: #0056b3;
+      }
+
+      .cardio-app-button {
+        margin-top: -5px;
+        padding: 20px 30px;
+        background-color: #100f0f; /* Changed to a different color */
+        border: none;
+        border-radius: 8px; /* Square-shaped border-radius */
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .cardio-app-button:hover {
+        background-color: #e03a00; /* Darker color on hover */
+      }
+      .black {
+        color: #000000;
+      }
+
+      .cardio-app-button {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <span class="navbar-text"
+        ><h1>DOWNLOAD OUR CARDIO APP FOR ANDROID</h1></span
+      >
+      <a
+        href="https://drive.google.com/file/d/10akRuapFdpP6tzke4zwlf_monXGYwkfZ/view"
+        target="_blank"
+        class="cardio-app-button"
+        >CardioApp Download</a
+      >
+    </div>
+
+    <div class="container">
+      <h1 class="black"><center>Welcome To The Cardio Section</center></h1>
+
+      <div class="module-row">
+        <div class="module-item">
+          <img src="assets/squats.avif" alt="Squats" class="module-image" />
+          <a
+            href="SquatsCounter/index.html"
+            class="module-link"
+            id="squatsCounter"
+            >Squats Counter</a
+          >
+        </div>
+
+        <div class="module-item">
+          <img src="assets/boxing.avif" alt="Boxing" class="module-image" />
+          <a
+            href="BoxingChallenge/index.html"
+            class="module-link"
+            id="boxingChallenge"
+            >Boxing Challenge</a
+          >
+        </div>
+
+        <div class="module-item">
+          <img src="assets/pushup.avif" alt="Push-up" class="module-image" />
+          <a href="Pushup/pushup.html" class="module-link" id="Push-up"
+            >Push-up</a
+          >
+        </div>
+
+        <div class="module-item">
+          <img src="assets/pullup.avif" alt="Pull-up" class="module-image" />
+          <a href="Pullup/pullup.html" class="module-link" id="Pull-up"
+            >Pull-up</a
+          >
+        </div>
+      </div>
+
+      <div class="module-row">
+        <div class="module-item">
+          <img src="assets/skipping.png" alt="Skipping" class="module-image" />
+          <a href="Skipping/skipping.html" class="module-link" id="skipping"
+            >Skipping</a
+          >
+        </div>
+
+        <div class="module-item">
+          <img
+            src="assets/shoulder.jpeg"
+            alt="Shoulderpress"
+            class="module-image"
+          />
+          <a
+            href="Shoulderpress/shoulder.html"
+            class="module-link"
+            id="shoulderpress"
+            >Shoulderpress</a
+          >
+        </div>
+
+        <div class="module-item">
+          <img
+            src="assets/lateral.jpeg"
+            alt="Lateral Raises"
+            class="module-image"
+          />
+          <a
+            href="LateralRaises/lraise.html"
+            class="module-link"
+            id="LateralRaises"
+            >Lateral Raises</a
+          >
+        </div>
+
+        <div class="module-item">
+          <img
+            src="assets/jumping.jpeg"
+            alt="Jumping Jacks"
+            class="module-image"
+          />
+          <a href="JumpingJacks/jj.html" class="module-link" id="JumpingJacks"
+            >Jumping Jacks</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

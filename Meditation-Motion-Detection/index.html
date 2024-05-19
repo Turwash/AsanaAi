@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Motion Tracking</title>
+    <base href="./" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #ffffff; /* Set background color to white */
+      }
+      #canvas,
+      #video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 48rem;
+        height: 36rem;
+        transform: translate(-50%, -50%);
+      }
+      #video {
+        display: none;
+      }
+      #timer {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #000000; /* Set font color to black */
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        left: 10px; /* Position on the left side */
+        background-color: #ffffff; /* Set background color to white */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1><center>Meditation Center - AsanaAi</center></h1>
+    </div>
+    <video id="video" width="768" height="576" autoplay></video>
+    <canvas id="canvas" width="768" height="576"></canvas>
+    <!-- Add audio element for the alarm sound -->
+    <audio id="alarm" src="./noise.mp3" preload="auto"></audio>
+    <div id="timer"></div>
+    <script src="./detection.js"></script>
+    <script>
+      ;(async function () {
+        // Formatted by StandardJS
+
+        const frameRate = 60 // 60 = requestAnimationFrame
+        const timeStep = 1 / frameRate
+        let countdownInterval
+        let countdownTime
+
+        const video = document.getElementById('video')
+        const canvas = document.getElementById('canvas')
+        const context = canvas.getContext('2d')
+
+        const width = canvas.width
+        const height = canvas.height
+
+        let difference
+        let threshold
+        let rectangle
+        let box
+
+        async function setupVideo () {
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia({
+              video: { width, height, frameRate }
+            })
+            video.srcObject = stream
+            video.onloadedmetadata = event => {
+              video.play()
+              startCountdown()
+            }
+          } catch (error) {
+            console.error(error)
+          } finally {
+            requestAnimationFrame(loop)
+          }
+        }
+
+        function drawCrosshair (r) {
+          context.fillStyle = 'rgba(255, 255, 255, 1)'
+          context.strokeStyle = 'rgba(255, 255, 255, 1)'
+          context.setLineDash([2, 4])
+          context.lineWidth = 2
+
+          context.beginPath()
+          context.moveTo(r.x + r.w / 2, 0)
+          context.lineTo(r.x + r.w / 2, height)
+          context.stroke()
+
+          context.beginPath()
+          context.moveTo(0, r.y + r.h / 2)
+          context.lineTo(width, r.y + r.h / 2)
+          context.stroke()
+
+          context.beginPath()
+          context.arc(r.x + r.w / 2, r.y + r.h / 2, 4, 0, Math.PI * 2)
+          context.fill()
+        }
+
+        function drawBounds (r) {
+          context.globalCompositeOperation = 'overlay'
+
+          context.fillStyle = 'rgba(0, 0, 0, 0.5)'
+          context.strokeStyle = 'rgba(255, 255, 255, 1)'
+          context.setLineDash([])
+          context.lineWidth = 2
+
+          context.fillRect(r.x, r.y, r.w, r.h)
+          context.strokeRect(r.x, r.y, r.w, r.h)
+
+          context.globalCompositeOperation = 'source-over'
+        }
+
+        function update () {
+          const data = getData(video)
+
+          if (!store.data) store.data = data
+
+          difference = getDifference(data, store.data)
+          threshold = getThreshold(difference)
+          box = getBounds(difference, width, threshold)
+          rectangle = getAverageRectangle(box)
+
+          store.data = data
+
+          // Check if motion is detected and play the alarm sound
+          if (rectangle.w > 0 && rectangle.h > 0) {
+            playAlarm();
+            resetCountdown();
+          }
+        }
+
+        function render () {
+          drawData(context, difference, 0, 0, width, height)
+          drawCrosshair(rectangle)
+          drawBounds(rectangle)
+        }
+
+        function loop (time) {
+          if (frameRate === 60) {
+            requestAnimationFrame(loop)
+          } else {
+            setTimeout(() => {
+              loop(performance.now())
+            }, timeStep * 1000)
+          }
+
+          update(time)
+          render(time)
+        }
+
+        function main () {
+          window.onload = setupVideo
+          // Prompt user for countdown time
+          countdownTime = prompt("How Many Minutes you want to Meditate Today?(click cancel to start by default 30 Mins)");
+          if (countdownTime === null || isNaN(countdownTime) || countdownTime <= 0) {
+            countdownTime = 30; // Default to 30 minutes if invalid input
+          }
+        }
+
+        main()
+
+        // Add a function to play the alarm sound when motion is detected
+        function playAlarm() {
+          const alarmSound = document.getElementById('alarm');
+          alarmSound.play();
+        }
+
+        // Countdown Timer
+        function startCountdown() {
+          let countdown = countdownTime * 60; // Convert minutes to seconds
+          countdownInterval = setInterval(() => {
+            const minutes = Math.floor(countdown / 60);
+            const seconds = countdown % 60;
+            document.getElementById('timer').innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            countdown--;
+            if (countdown < 0) {
+              clearInterval(countdownInterval);
+              document.getElementById('timer').innerText = '00:00';
+            }
+          }, 1000);
+        }
+
+        function resetCountdown() {
+          clearInterval(countdownInterval);
+          startCountdown();
+        }
+      })()
+    </script>
+  </body>
+</html>

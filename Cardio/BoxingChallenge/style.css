@@ -1,0 +1,81 @@
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  position: absolute;
+  top: 0px;
+  right: 15vw;
+  height: 25%;
+  width: 20%;
+  z-index: 2;
+}
+
+.control-panel {
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+
+video {
+  display: none;
+}
+
+canvas-ball {
+  z-index: 2;
+}
+
+canvas {
+  z-index: -1;
+  opacity: 0.7;
+}
+
+canvas,
+h1 {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+h1::before {
+  content: var(--text-content);
+  animation: text-animate 1s linear infinite;
+}
+
+p1 {
+  font-size: 49px;
+  color: blue;
+}
+
+p2 {
+  font-size: 19px;
+  color: blue;
+}
+
+p3 {
+  font-size: 29px;
+}
+
+@keyframes text-animate {
+  0% {
+    --text-content: "Loading.";
+  }
+  33% {
+    --text-content: "Loading..";
+  }
+  66% {
+    --text-content: "Loading...";
+  }
+  100% {
+    --text-content: "Loading";
+  }
+}

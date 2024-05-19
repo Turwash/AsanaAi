@@ -1,0 +1,114 @@
+body {
+    background-color: #f6fbf4;
+}
+
+.logo {
+    width: 13em;
+    height: 63px;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h1 strong {
+    font-weight: 600;
+    color: #4b8673;
+    /* color: #000403; */
+}
+
+.inputstyle {
+    padding: 20px !important;
+}
+
+.whoop {
+    background-color: #5fd068;
+    width: 8em;
+    font-size: 30px !important;
+    color: #ffffff;
+}
+
+.caloriescont {
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.caloriescont ul {
+    padding: 0px;
+}
+
+.caloriescont ul li {
+    list-style: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #efefef;
+    width: 80%;
+}
+
+.caloriescont h3 {
+    color: #4b8673;
+    font-size: 2em;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+/* .caloriescont h5 {
+    color: #4b8673;
+} */
+.caloriescont h5 {
+    color:#5fd068;
+    font-weight: bold;
+}
+
+.servingsize {
+    background-color: #000000;
+    padding: 10px;
+    color: #ffffff;
+}
+
+/* Add CSS for the table */
+#mealsContainer {
+    margin-top: 20px;
+}
+
+#mealsContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#mealsContainer th,
+#mealsContainer td {
+    padding: 8px;
+}
+
+#mealsContainer th {
+    background-color: #000;
+    color: #fff;
+}
+
+#mealsContainer tr:nth-child(2n+1) {
+    background-color: #62d9ec; /* Blue */
+}
+
+#mealsContainer tr:nth-child(2n) {
+    background-color: #5fd068; /* Green */
+}
+
+#mealsContainer tr:hover {
+    background-color: lightpink;
+    /* background-color: #e87fea; */
+}
+
+/* Add CSS for the remove button */
+#mealsContainer button {
+    background-color: silver; /* Red */
+    color: rgb(6, 0, 0);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#mealsContainer button:hover {
+    background-color: rgb(236, 13, 13); /* Darker red on hover */
+}
